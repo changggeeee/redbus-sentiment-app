@@ -264,7 +264,7 @@ with st.sidebar:
     <div style='font-size:0.72rem;color:#555566;line-height:1.6;'>
         Built with Streamlit + Plotly<br>
         NLP · Data Visualization<br>
-        <span style='color:#ff4b4b;'>Portfolio Project 2024</span>
+        <span style='color:#ff4b4b;'>Portfolio Project</span>
     </div>
     """, unsafe_allow_html=True)
 
@@ -593,7 +593,7 @@ elif page == "👤 About":
     st.markdown("<hr>", unsafe_allow_html=True)
     st.markdown("""
     <div style='text-align:center;color:#555566;font-size:0.8rem;padding:1rem 0;'>
-        Built with ❤️ using Streamlit · <span style='color:#ff4b4b;'>Portfolio Project</span> · 2024
+        Built with ❤️ using Streamlit · <span style='color:#ff4b4b;'>Portfolio Project</span> ·
     </div>
     """, unsafe_allow_html=True)
 
