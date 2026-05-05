@@ -279,7 +279,7 @@ filtered_df = df[
 total      = len(filtered_df)
 positive_n = (filtered_df['SentimentCategory'] == 'positive').sum()
 negative_n = (filtered_df['SentimentCategory'] == 'negative').sum()
-neutral_n  = (filtered_df['SentimentCategory'] == 'neutral').sum()
+# neutral tidak dipakai (4 kelas)
 avg_rating = filtered_df['Rating'].mean() if total > 0 else 0
 avg_score  = filtered_df['SentimentScore'].mean() if ('SentimentScore' in filtered_df.columns and total > 0) else 0
 
@@ -558,9 +558,9 @@ elif page == "👤 About":
         Dataset berisi ulasan pengguna aplikasi RedBus yang dianalisis menggunakan teknik analisis sentimen.</p>
         <h3>🔬 Metodologi</h3>
         <ul>
-            <li>Preprocessing teks: tokenisasi, stopword removal, normalisasi</li>
-            <li>Analisis sentimen berbasis VADER/TextBlob atau custom model</li>
-            <li>Klasifikasi ke kategori: Positive, Negative, Neutral</li>
+            <li>Preprocessing teks: regex cleaning & normalisasi teks ulasan</li>
+            <li>Analisis sentimen berbasis VADER Sentiment (compound score -1.0 hingga +1.0)</li>
+            <li>Klasifikasi ke 4 kategori: Positive, Mixed Positive, Mixed Negative, Negative</li>
             <li>Bucketing skor sentimen untuk granularitas lebih tinggi</li>
             <li>Visualisasi interaktif menggunakan Plotly & Streamlit</li>
         </ul>
@@ -570,7 +570,7 @@ elif page == "👤 About":
         """, unsafe_allow_html=True)
 
     with col_a2:
-        skills = ["Python 3.11","Streamlit","Pandas","NumPy","Plotly","NLTK","TextBlob","VADER Sentiment","Scikit-learn"]
+        skills = ["Python 3.11","Streamlit","Pandas","NumPy","Plotly","NLTK","VADER Sentiment","Scikit-learn","TF-IDF"]
         badges = "".join([f'<span class="skill-badge">{s}</span>' for s in skills])
         st.markdown(f'<div class="about-card"><h3>🛠 Tech Stack</h3>{badges}</div>', unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
